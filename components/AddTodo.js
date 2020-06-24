@@ -16,8 +16,9 @@ export default function AddTodo({ onButtonPress }) {
       />
       <Button
         onPress={() => {
-          onButtonPress(text);
-          setText("");
+          if (onButtonPress(text)) {
+            setText("");
+          }
         }}
         title="add todo"
         color="coral"
